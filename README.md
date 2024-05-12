@@ -1,8 +1,7 @@
-# kobra2neo-orangepizero3
-Подключение SPI дисплея Anycubic Kobra 2 Neo к Orange Pi Zero 3
+# Подключение SPI дисплея и энкодера Anycubic Kobra 2 Neo к Orange Pi Zero 3
+
 
 Все нижеописанное выполнялось на образе системы [Armbian Bookworm](https://www.armbian.com/orange-pi-zero-3/) версия ядра [6.6.30](https://github.com/armbian/community/releases/download/24.5.0-trunk.532/Armbian_community_24.5.0-trunk.532_Orangepizero3_bookworm_current_6.6.30_minimal.img.xz)
-
 
 
 ## Подключение железа:
@@ -18,10 +17,13 @@
 5) **MOSI** — **PH7** (SPI1_MOSI)
 6) **DC** — **PH3**
 7) **CS** — **PH9** (SPI1_CS)
-### Подключение энкодера (опционально - для дальнейших доработок)
+### Подключение энкодера
 8) **ES** — **PC11**
 9) **EOA** — **PC7**
 10) **EOB** — **PC10**
+
+#### [Гайд по настройке энкодера](https://github.com/choolkov/kobra2neo-orangepizero3/blob/main/ENCODER.md)
+
 
 ## Настройка ПО
 ### Установка и настройка XORG
@@ -103,7 +105,7 @@ sudo armbian-add-overlay opizero3-kobra2neo.dts
 ```
 sudo reboot
 ```
-### Все вышеописанное одной командой:
+### Все вышеописанное одной командой (пайплайн):
 ```
 cd && sudo apt update && sudo apt install -y xserver-xorg-video-fbdev wget && sudo wget https://raw.githubusercontent.com/choolkov/kobra2neo-orangepizero3/main/50-fbdev.conf -O /usr/share/X11/xorg.conf.d/50-fbdev.conf && wget https://raw.githubusercontent.com/choolkov/kobra2neo-orangepizero3/main/opizero3-kobra2neo.dts -O /tmp/opizero3-kobra2neo.dts && sudo armbian-add-overlay /tmp/opizero3-kobra2neo.dts && sudo reboot
 ```
