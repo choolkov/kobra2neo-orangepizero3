@@ -1,5 +1,5 @@
 # Подключение SPI дисплея и энкодера Anycubic Kobra 2 Neo к Orange Pi Zero 3
-
+![](https://github.com/choolkov/kobra2neo-orangepizero3/blob/main/screen.png?raw=true)
 
 Все нижеописанное выполнялось на образе системы [Armbian Bookworm](https://www.armbian.com/orange-pi-zero-3/) версия ядра [6.6.30](https://github.com/armbian/community/releases/download/24.5.0-trunk.532/Armbian_community_24.5.0-trunk.532_Orangepizero3_bookworm_current_6.6.30_minimal.img.xz)
 

@@ -113,6 +113,16 @@ sudo systemctl restart encoder
 ```
 [main]
 show_cursor: True
+
+#~# --- Do not edit below this line. This section is auto generated --- #~#
+#~#
+#~# [main]
+#~# theme = colorized
+#~# screen_blanking = off
+#~# screen_blanking_printing = off
+#~# font_size = max
+#~#
 ```
+
 ## Выключение одноплатника с помощью энкодера
 Чтобы выключить плату нужно зажать кнопу энкодера (без поворота) на 5 секунд
