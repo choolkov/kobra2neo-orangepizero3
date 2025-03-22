@@ -1,8 +1,22 @@
 import os
 import time
 
-import pyautogui
 import wiringpi
+
+from Xlib.error import DisplayConnectionError
+
+os.environ['DISPLAY'] = ':0'
+attempt_count = 0
+
+while True:
+    try:
+        import pyautogui
+        break
+    except DisplayConnectionError:
+        attempt_count += 1
+        print(f'DisplayConnectionError error occurred, reconnection attempt #{attempt_count}')
+        time.sleep(1)
+
 
 EOA_PIN = 13  # PC7   Encoder Out A
 EOB_PIN = 16  # PC10  Encoder Out B
